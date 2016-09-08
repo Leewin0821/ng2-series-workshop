@@ -7,6 +7,7 @@
       class="col-xs-10 title"
       autocomplete="off"
       [(ngModel)]="newNote.title"
+      *ngIf="isFocus"
     >
     <input
       type="text"
@@ -15,8 +16,10 @@
       class="col-xs-10"
       autocomplete="off"
       [(ngModel)]="newNote.value"
+      (focus)="isFocus=true"
     >
-    <div class="actions col-xs-12 row between-xs">
+    <div class="actions col-xs-12 row between-xs"
+         *ngIf="isFocus">
       <button
         type="submit"
         class="btn-light"
