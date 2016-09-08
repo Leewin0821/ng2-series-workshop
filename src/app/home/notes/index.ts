@@ -12,15 +12,18 @@ import {NoteCreator} from './note-creator'
 export class Notes{
   notes = [{
     title: 't',
-    value: 'n'
+    value: 'n',
+    color: 'white'
   },
   {
     title: 't1',
-    value: 'n1'
+    value: 'n1',
+    color: 'white'
   },
   {
     title: 't2',
-    value: 'n2'
+    value: 'n2',
+    color: 'white'
   }]
 
   checkCard(note, i) {

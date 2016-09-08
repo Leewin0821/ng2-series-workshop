@@ -1,4 +1,4 @@
-<div class="note-creator shadow-2">
+<div class="note-creator shadow-2" [ngStyle]="{'background-color': pickedColor}">
   <form class="row">
     <input
       type="text"
@@ -20,6 +20,7 @@
     >
     <div class="actions col-xs-12 row between-xs"
          *ngIf="isFocus">
+    <color-picker (onPickColor)="pickColor($event)"></color-picker>
       <button
         type="submit"
         class="btn-light"
