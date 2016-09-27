@@ -1,36 +1,32 @@
 import {Component} from "@angular/core";
-import {NoteCard} from './note-card';
-import {NoteCreator} from './note-creator'
+import {NoteCard} from "./note-card";
+import {NoteCreator} from "./note-creator";
+import {NoteService} from "../../shared/services/notes";
 
 @Component({
-  selector: 'notes',
-  template: require('./notes.html'),
-  styles: [require('./notes.css')],
-  directives: [NoteCard, NoteCreator]
+    selector: 'notes',
+    template: require('./notes.html'),
+    styles: [require('./notes.css')],
+    directives: [NoteCard, NoteCreator]
 })
 
-export class Notes{
-  notes = [{
-    title: 't',
-    value: 'n',
-    color: 'white'
-  },
-  {
-    title: 't1',
-    value: 'n1',
-    color: 'white'
-  },
-  {
-    title: 't2',
-    value: 'n2',
-    color: 'white'
-  }]
+export class Notes {
+    notes = []
 
-  checkCard(note, i) {
-    this.notes.splice(i, 1)
-  }
+    constructor(private noteService: NoteService) {
+        this.noteService.getNotes().subscribe(res => this.notes = res.data)
+    }
 
-  addNote(note) {
-    this.notes.push(note);
-  }
+    checkCard(note) {
+        this.noteService.completeNote(note).subscribe(note => {
+            let index = this.notes.findIndex(localNote => localNote.id === note.id)
+            this.notes.splice(index, 1)
+        })
+    }
+
+    addNote(note) {
+        this.noteService.createNote(note).subscribe(note => {
+            this.notes.push(note)
+        })
+    }
 }
