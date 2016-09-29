@@ -1,5 +1,5 @@
 <div class="auth row center-xs middle-xs">
-    <form class="col-xs-6 shadow-2">
+    <form class="col-xs-6 shadow-2" (submit)="authenticate()">
         <div class="inputs row center-xs middle-xs">
             <h3 class="col-xs-8 title">
                 {{ mode }}
@@ -21,7 +21,7 @@
                    required
                    #password="ngModel"
             >
-            <div class="error" [hidden]="password.valid || password.touched">password is required</div>
+            <div class="error" [hidden]="password.valid || !password.touched">password is required</div>
             <div class="actions col-xs-12">
                 <div class="row center-xs">
                     <button type="submit" class="btn-light">
