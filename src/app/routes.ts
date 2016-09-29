@@ -1,6 +1,7 @@
 import {RouterConfig} from "@angular/router";
 import {Home} from "./home";
 import {About} from "./about";
+import {AuthComponent} from "./auth/auth.component";
 
 export const router: RouterConfig = [
     {
@@ -9,7 +10,11 @@ export const router: RouterConfig = [
     }, {
         path: 'about',
         component: About,
-    },{
+    }, {
+        path: 'auth',
+        component: AuthComponent
+    }, {
         path: '**',
         redirectTo: ''
-    }];
+    }
+];
