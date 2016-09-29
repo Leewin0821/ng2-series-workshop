@@ -31,6 +31,12 @@ export class AuthService implements CanActivate {
             .map(res => res.data)
     }
 
+    signOut(): void {
+        localStorage.removeItem(this.JWT_KEY)
+        this.user = null
+        this.router.navigate([`/auth`])
+    }
+
     canActivate(): boolean {
         const isAuth = this.isAuthorised()
 
