@@ -1,6 +1,6 @@
-import {Response, Http, Headers} from "@angular/http";
-import {Injectable} from "@angular/core";
-import {Observable} from "rxjs";
+import {Response, Http, Headers} from '@angular/http'
+import {Injectable} from '@angular/core'
+import {Observable} from 'rxjs'
 
 @Injectable()
 export class ApiService {
@@ -50,5 +50,9 @@ export class ApiService {
             .map(this.checkError)
             .catch(err => Observable.throw(err))
             .map(this.getJson)
+    }
+
+    setHeaders(headers: {[key: string]: string}): void {
+        Object.entries(headers).forEach(([key, value]) => this.headers.set(key, value))
     }
 }
