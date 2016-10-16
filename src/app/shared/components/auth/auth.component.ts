@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {link} from 'fs'
-import {AuthService} from '../shared/services/auth.service'
+import {AuthService} from '../../../shared/services/auth.service'
 import {Router} from '@angular/router'
-import {router} from '../routes'
+import {router} from '../../../../app/routes'
 
 const linkTexts = {
     signIn : `Don't have an account?`,

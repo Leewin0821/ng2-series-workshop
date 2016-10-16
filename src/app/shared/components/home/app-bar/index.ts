@@ -1,6 +1,6 @@
 import {Component} from "@angular/core";
 import {ROUTER_DIRECTIVES} from "@angular/router";
-import {AuthService} from '../../shared/services/auth.service'
+import {AuthService} from '../../../../shared/services/auth.service'
 
 @Component({
   selector: 'app-bar',

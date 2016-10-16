@@ -1,7 +1,7 @@
 import {Component} from "@angular/core";
 import {NoteCard} from "./note-card";
 import {NoteCreator} from "./note-creator";
-import {NoteService} from "../../shared/services/notes";
+import {NoteService} from "../../../../shared/services/notes";
 
 @Component({
     selector: 'notes',

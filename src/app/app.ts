@@ -1,6 +1,6 @@
 import {Component} from "@angular/core"
 import {ROUTER_DIRECTIVES} from "@angular/router"
-import {AppBar} from "./home/app-bar/index";
+import {AppBar} from "./shared/components/home/app-bar/index";
 
 @Component({
   selector: 'app',
